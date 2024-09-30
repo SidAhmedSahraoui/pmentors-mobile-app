@@ -1,7 +1,3 @@
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-
-//import Ionicons from '@expo/vector-icons/Ionicons';
-// import type from react-native-heroicons
 import * as Icons from "react-native-heroicons/solid";
 
 const iconMap: { [key: string]: React.ComponentType<{ color: string }> } = {
