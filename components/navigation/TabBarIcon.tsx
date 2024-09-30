@@ -1,9 +1,24 @@
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { type IconProps } from '@expo/vector-icons/build/createIconSet';
-import { type ComponentProps } from 'react';
+//import Ionicons from '@expo/vector-icons/Ionicons';
+// import type from react-native-heroicons
+import * as Icons from "react-native-heroicons/solid";
 
-export function TabBarIcon({ style, ...rest }: IconProps<ComponentProps<typeof Ionicons>['name']>) {
-  return <Ionicons size={28} style={[{ marginBottom: -3 }, style]} {...rest} />;
+const iconMap: { [key: string]: React.ComponentType<{ color: string }> } = {
+  // Add your icon mappings here
+  HomeIcon: Icons.HomeIcon,
+  BriefcaseIcon: Icons.BriefcaseIcon,
+  CurrencyDollarIcon: Icons.CurrencyDollarIcon,
+  UsersIcon: Icons.UsersIcon,
+  SettingIcon: Icons.Cog8ToothIcon,
+  SwapIcon: Icons.ArrowsUpDownIcon,
+};
+
+export function TabBarIcon(props: { name: string; color: string }) {
+  const Icon = iconMap[props.name];
+  if (!Icon) {
+    return null; // or some fallback UI
+  }
+  return <Icon color={props.color} />;
 }
+

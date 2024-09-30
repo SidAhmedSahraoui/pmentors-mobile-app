@@ -17,21 +17,49 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Portfolio',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabBarIcon name={focused ? 'BriefcaseIcon' : 'BriefcaseIcon'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="users"
         options={{
-          title: 'Explore',
+          title: 'users',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'UsersIcon' : 'UsersIcon'} color={color} />
           ),
         }}
       />
+      <Tabs.Screen
+        name="swap"
+        options={{
+          title: 'Swap',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'SwapIcon' : 'SwapIcon'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="pricing"
+        options={{
+          title: 'Pricing',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'CurrencyDollarIcon' : 'CurrencyDollarIcon'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="setting"
+        options={{
+          title: 'Setting',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'SettingIcon' : 'SettingIcon'} color={color} />
+          ),
+        }}
+      />
+
     </Tabs>
   );
 }
