@@ -1,33 +1,58 @@
 {
   "expo": {
-    "name": "pmentors-app",
+    "name": "Pmentors",
+    "description": "Pmentors is a mobile application that connects mentors with mentees.",
     "slug": "pmentors-app",
+    "owner": "sidahmedsahraoui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "pmentors",
     "userInterfaceStyle": "automatic",
+    "platforms": [
+      "ios",
+      "android"    
+    ],
     "splash": {
       "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "center",
+      "backgroundColor": "#F2EEEA"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sidahmedsahraoui.pmentors-app",
+      "icon": "./assets/images/icon.png"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/images/icon-android.png",
+        "backgroundColor": "#F2EEEA"
+      },
+      "package": "com.sidahmedsahraoui.pmentorsapp"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Montserrat-Thin.ttf",
+            "./assets/fonts/Montserrat-Regular.ttf",
+            "./assets/fonts/Montserrat-Medium.ttf",
+            "./assets/fonts/Montserrat-SemiBold.ttf",
+            "./assets/fonts/Montserrat-Bold.ttf",
+            "./assets/fonts/Montserrat-ExtraBold.ttf",
+            "./assets/fonts/Montserrat-Black.ttf",
+            "./assets/fonts/Montserrat-Light.ttf",
+            "./assets/fonts/Montserrat-ExtraLight.ttf"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

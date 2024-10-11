@@ -1,46 +1,19 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-import { StyleSheet } from 'react-native';
-
-
-
+import { Platform, StyleSheet } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
-  const styles = StyleSheet.create({
-    tabBar: {
-      borderTopColor: Colors[colorScheme ?? 'light'].border,
-      borderTopWidth: 2,
-      paddingVertical: 8,
-      height: 55,
-    },
-    tabBarItem: {
-      backgroundColor: '#000',
-    },
-    tabBarLabel: {
-      fontSize: 12,
-      fontWeight: 600,
-    },
-    tabBarIcon: {
-      width: 24,
-      height: 24,
-    },
-  });
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#fff',
         headerShown: false,
         tabBarStyle: {...styles.tabBar},
         headerBackgroundContainerStyle: {...styles.tabBar},
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Portfolio',
           tabBarIcon: ({ color, focused }) => (
@@ -98,3 +71,23 @@ export default function TabLayout() {
   );
 }
 
+const styles = StyleSheet.create({
+    tabBar: {
+      borderTopColor: '#4b5563',
+      borderTopWidth: 2,
+      paddingVertical: 8,
+      height: Platform.OS === 'ios' ? 85 : 55,
+      backgroundColor: '#0e081f',
+    },
+    tabBarItem: {
+      backgroundColor: '#000',
+    },
+    tabBarLabel: {
+      fontSize: 12,
+      fontWeight: 600,
+    },
+    tabBarIcon: {
+      width: 24,
+      height: 24,
+    },
+  });
